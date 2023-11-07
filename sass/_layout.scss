@@ -1,0 +1,97 @@
+@import 'variables.scss';
+@import 'functions.scss';
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: $body-background;
+}
+
+.header{
+    height: 176px;
+    background-color: $header-background;
+    @include h-flexing('space-around', 'center');
+    gap: $header-element-spacing;
+    font-size: $header-element-text;
+    font-family: $general-text-font;
+    color: $dark-background;
+
+    svg{
+        height: auto;
+        width: 176px;
+        color: $light-background;
+        margin-top: 26px
+    }
+
+}
+
+.idioma{
+    @include v-flexing('center', 'center');
+    @include text-display('medium');
+
+    img{
+        height: 39px;
+        width: 117px;
+    }
+
+}
+
+.banner{
+
+    img{ 
+        width: 100%;
+    }
+
+}
+
+.btn{
+    all: unset;
+    background-color: $btn-background;
+    padding: 10px;
+    @include m-border-radius(10px, 10px, 10px, 10px);
+}
+
+@for $i from 1 through length($display){
+    $item: nth($display, $i);
+    .container-#{$item}{
+        display: #{$item};
+    }
+}
+
+@for $i from 1 through 12 {
+    .col-#{$i}{
+        grid-template-columns: repeat(#{$i}, auto);
+    }
+}
+
+@for $i from 1 through 12 {
+    .col-pos-#{$i}{
+        grid-column: #{$i} / #{$i+1};
+    }
+}
+
+@for $i from 1 through 12 {
+    .row-#{$i}{
+        grid-template-rows: #{$i};
+    }
+}
+
+
+@for $i from 1 through 12 {
+    .row-pos-#{$i}{
+        grid-row: #{$i} / #{$i+1};
+    }
+}
+
+a{
+    all: unset;
+    cursor: pointer;
+}
+
+.footer{
+    background-color: $footer-background;
+}

@@ -1,0 +1,44 @@
+// COLORES
+
+$header-background: #866D57;
+$body-background: #F1EEE7;
+$footer-background: #363636;
+$btn-background: #FFA438;
+$price-background: #6F481B;
+$element-name-background: #D9D9D9;
+
+// TIPO DE FUENTES
+
+$product-text-font: 'inter';
+$general-text-font: 'Loved by the King';
+
+// COLORES DE FUENTES
+
+$light-background: #FFFFFF;
+$dark-background: #363636;
+
+// TAMAÑO DE FUENTES
+
+$section-title: 96px;
+$banner-text: 64px;
+$header-element-text:48px;
+$button-text: 36px;
+
+$general-text-sizes: (
+    "large": 40px,
+    "medium": 24px
+);
+
+// ESPACIADO
+
+$header-element-spacing: 9%;
+
+// LISTAS DE TIPOS
+
+$display: ('grid', 'flex', 'block', 'none');
+
+// TIEMPO DE LAS TRANSICIONES
+
+$fast: .2s;
+$medium: .5s;
+$slow: 1s;
