@@ -21,7 +21,7 @@ body{
     font-family: $general-text-font;
     color: $dark-background;
     padding-right: 40px;
-    box-shadow: 10px 20px 10px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
     z-index: 99;
 
     svg{
@@ -45,7 +45,6 @@ body{
 }
 
 .banner {
-    position: relative;
     height: $banner-height;
   
     img {
@@ -58,8 +57,8 @@ body{
         color: $dark-background;
         font-family: $general-text-font;
         font-size: $banner-text;
-        top: 100px;
-        left: 400px;
+        top: addPx($header-height, 100px);
+        left: 27%;
         transform: rotate(19.77deg);
         @include textShadow(0.25); 
     }
@@ -75,9 +74,13 @@ body{
     cursor: pointer;
 }
 
+main{
+    margin-bottom: $header-height;
+}
+
 .main-cart-btn{
     position: absolute;
-    top: 30px;
+    top: addPx($header-height, 30px);
     right: 80px;
     gap: 40px;
     height: 100px;
@@ -96,12 +99,27 @@ body{
 
 .main-page-element{
 
+    @include v-flexing(center, center);
+
     img{
         @include m-border-radius(15px, 15px, 0, 0);
-        width: 439px;
+        width: $main-page-element-width;
         height: 309px;
-    } 
+    }  
 
+}
+
+.main-page-name-container{
+    height: 130px;
+    color: $light-background;
+    width: $main-page-element-width;
+    background-color: $element-name-background;
+    @include m-border-radius(0, 0, 15px, 15px);
+    @include h-flexing(center, center);
+    font-family: $product-text-font;
+    font-size: map-get($map: $general-text-sizes, $key: 'large');
+    text-align: center;
+    padding: 0px 20px;
 }
 
 
@@ -112,6 +130,36 @@ a{
 
 .footer{
     background-color: $dark-color;
+    width: 100%;
+    height: addPx(366px, addPx($footer-padding-top, $banner-text));
+    padding: $footer-padding-top 0 40px 40px;
+    font-family: $general-text-font;
+    color: $dark-background;
+
+    img{
+        height: 400px;
+    }
+
+    .contact-title{
+        font-size: $banner-text;
+    }
+
+    .email{
+        font-size: $button-text;
+    }
+
+    .tel{
+        font-size: $banner-text;
+    }
+
+    .location-title{
+        font-size: $banner-text;
+    }
+
+    .location{
+        font-size: $button-text;
+    }
+
 }
 
 // BUCLES
@@ -130,8 +178,10 @@ a{
 }
 
 @for $i from 1 through 12 {
-    .col-pos-#{$i}{
-        grid-column: #{$i} / #{$i+1};
+    @for $j from $i through 12{
+        .col-pos-#{$i}-#{$j}{
+            grid-column: #{$i} / #{$j};
+        }
     }
 }
 
@@ -143,15 +193,21 @@ a{
 
 
 @for $i from 1 through 12 {
-    .row-pos-#{$i}{
-        grid-row: #{$i} / #{$i+1};
+    @for $j from $i through 12{
+        .row-pos-#{$i}-#{$j}{
+            grid-row: #{$i} / #{$j};
+        }
     }
 }
 
 @for $i from 1 through length($flex){
-    $justify: nth($flex, $i);
-    .flex-items-#{$justify}{
-        justify-content: #{$justify};
+    $justify1: nth($flex, $i);
+    @for $j from 1 through length($flex){
+        $justify2: nth($flex, $j);
+        .items-#{$justify1}-#{$justify2}{
+            justify-content: #{$justify1};
+            align-items: #{$justify2};
+        }
     }
 }
 
