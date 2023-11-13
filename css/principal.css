@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Loved+by+the+King&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap");
 * {
   margin: 0px;
   padding: 0px;
@@ -10,21 +11,24 @@ body {
 }
 
 .header {
+  position: relative;
   height: 176px;
   background-color: #866D57;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 9%;
   font-size: 48px;
   font-family: "Loved by the King";
-  color: #363636;
+  color: #FFFFFF;
+  padding-right: 40px;
+  box-shadow: 10px 20px 10px rgba(0, 0, 0, 0.25);
+  z-index: 99;
 }
 .header svg {
   height: auto;
   width: 176px;
-  color: #FFFFFF;
+  color: #363636;
   margin-top: 26px;
 }
 
@@ -40,18 +44,78 @@ body {
   width: 117px;
 }
 
+.banner {
+  position: relative;
+  height: 450px;
+}
 .banner img {
   width: 100%;
+  height: 100%;
+}
+.banner .banner-text {
+  position: absolute;
+  color: #FFFFFF;
+  font-family: "Loved by the King";
+  font-size: 64px;
+  top: 100px;
+  left: 400px;
+  transform: rotate(19.77deg);
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .btn {
   all: unset;
   background-color: #FFA438;
-  padding: 10px;
+  font-family: "inter";
+  font-size: 36px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.main-cart-btn {
+  position: absolute;
+  top: 30px;
+  right: 80px;
+  gap: 40px;
+  height: 100px;
+  width: 246px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+}
+
+.section-title {
+  font-size: 96px;
+  color: #363636;
+  font-family: "Loved by the King";
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.main-page-element img {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  width: 439px;
+  height: 309px;
+}
+
+a {
+  all: unset;
+  cursor: pointer;
+}
+
+.footer {
+  background-color: #363636;
 }
 
 .container-grid {
@@ -262,13 +326,56 @@ body {
   grid-row: 12/13;
 }
 
-a {
-  all: unset;
-  cursor: pointer;
+.flex-items-center {
+  justify-content: center;
 }
 
-.footer {
-  background-color: #363636;
+.flex-items-space-between {
+  justify-content: space-between;
+}
+
+.flex-items-space-around {
+  justify-content: space-around;
+}
+
+.flex-items-space-evenly {
+  justify-content: space-evenly;
+}
+
+.flex-items-flex-end {
+  justify-content: flex-end;
+}
+
+.flex-items-flex-start {
+  justify-content: flex-start;
+}
+
+.gap-10 {
+  gap: 10px;
+}
+
+.gap-20 {
+  gap: 20px;
+}
+
+.gap-50 {
+  gap: 50px;
+}
+
+.gap-100 {
+  gap: 100px;
+}
+
+.gap-200 {
+  gap: 200px;
+}
+
+.gap-300 {
+  gap: 300px;
+}
+
+.gap-400 {
+  gap: 400px;
 }
 
 /*# sourceMappingURL=principal.css.map */

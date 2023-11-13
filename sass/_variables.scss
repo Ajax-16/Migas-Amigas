@@ -2,7 +2,7 @@
 
 $header-background: #866D57;
 $body-background: #F1EEE7;
-$footer-background: #363636;
+$dark-color: #363636;
 $btn-background: #FFA438;
 $price-background: #6F481B;
 $element-name-background: #D9D9D9;
@@ -14,8 +14,13 @@ $general-text-font: 'Loved by the King';
 
 // COLORES DE FUENTES
 
-$light-background: #FFFFFF;
-$dark-background: #363636;
+$dark-background: #FFFFFF;
+$light-background: #363636;
+
+// TAÑANOS
+
+$header-height: 176px;
+$banner-height: 450px;
 
 // TAMAÑO DE FUENTES
 
@@ -31,11 +36,15 @@ $general-text-sizes: (
 
 // ESPACIADO
 
-$header-element-spacing: 9%;
+
 
 // LISTAS DE TIPOS
 
 $display: ('grid', 'flex', 'block', 'none');
+
+$flex: (center, space-between, space-around, space-evenly, flex-end, flex-start);
+
+$gap: (10, 20, 50, 100, 200, 300, 400);
 
 // TIEMPO DE LAS TRANSICIONES
 

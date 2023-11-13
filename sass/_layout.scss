@@ -1,3 +1,4 @@
+@use 'functions.scss';
 @import 'variables.scss';
 @import 'functions.scss';
 
@@ -12,17 +13,20 @@ body{
 }
 
 .header{
-    height: 176px;
+    position: relative;
+    height: $header-height;
     background-color: $header-background;
-    @include h-flexing('space-around', 'center');
-    gap: $header-element-spacing;
+    @include h-flexing(space-between, center);
     font-size: $header-element-text;
     font-family: $general-text-font;
     color: $dark-background;
+    padding-right: 40px;
+    box-shadow: 10px 20px 10px rgba(0, 0, 0, 0.25);
+    z-index: 99;
 
     svg{
         height: auto;
-        width: 176px;
+        width: $header-height;
         color: $light-background;
         margin-top: 26px
     }
@@ -30,7 +34,7 @@ body{
 }
 
 .idioma{
-    @include v-flexing('center', 'center');
+    @include v-flexing(center, center);
     @include text-display('medium');
 
     img{
@@ -40,20 +44,77 @@ body{
 
 }
 
-.banner{
-
-    img{ 
-        width: 100%;
+.banner {
+    position: relative;
+    height: $banner-height;
+  
+    img {
+      width: 100%;
+      height: 100%;
     }
 
-}
+    .banner-text {
+        position: absolute;
+        color: $dark-background;
+        font-family: $general-text-font;
+        font-size: $banner-text;
+        top: 100px;
+        left: 400px;
+        transform: rotate(19.77deg);
+        @include textShadow(0.25); 
+    }
 
-.btn{
+  }
+  
+.btn {    
     all: unset;
     background-color: $btn-background;
-    padding: 10px;
+    font-family: $product-text-font;
+    font-size: $button-text;
+    @include h-flexing(center, center);
+    cursor: pointer;
+}
+
+.main-cart-btn{
+    position: absolute;
+    top: 30px;
+    right: 80px;
+    gap: 40px;
+    height: 100px;
+    width: 246px;
     @include m-border-radius(10px, 10px, 10px, 10px);
 }
+
+.section-title{
+    font-size: $section-title;
+    color: $dark-color;
+    font-family: $general-text-font;
+    @include textShadow(0.5);
+    @include h-flexing(center, center);
+    padding: 40px;
+}
+
+.main-page-element{
+
+    img{
+        @include m-border-radius(15px, 15px, 0, 0);
+        width: 439px;
+        height: 309px;
+    } 
+
+}
+
+
+a{
+    all: unset;
+    cursor: pointer;
+}
+
+.footer{
+    background-color: $dark-color;
+}
+
+// BUCLES
 
 @for $i from 1 through length($display){
     $item: nth($display, $i);
@@ -87,11 +148,16 @@ body{
     }
 }
 
-a{
-    all: unset;
-    cursor: pointer;
+@for $i from 1 through length($flex){
+    $justify: nth($flex, $i);
+    .flex-items-#{$justify}{
+        justify-content: #{$justify};
+    }
 }
 
-.footer{
-    background-color: $footer-background;
+@for $i from 1 through length($gap){
+    $value: nth($gap, $i);
+    .gap-#{$value}{
+        gap: #{$value} + px;
+    }
 }
