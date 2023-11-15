@@ -100,7 +100,7 @@ main {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 40px;
+  padding: 70px;
 }
 
 .main-page-element {
@@ -167,6 +167,63 @@ a {
 }
 .footer .location {
   font-size: 36px;
+}
+
+.container-product {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container-product img {
+  width: 329px;
+  height: 233px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.container-product .product-title {
+  font-size: 24px;
+  color: #363636;
+  background-color: #D9D9D9;
+  font-family: "Inter";
+  height: 67px;
+  width: 222px;
+  padding: 10px;
+  text-align: center;
+}
+.container-product .product-price {
+  font-size: 24px;
+  color: #FFFFFF;
+  background-color: #6F481B;
+  font-family: "Inter";
+  width: 107px;
+}
+.container-product .btn-product {
+  height: 67px;
+  width: 329px;
+  gap: 30px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  padding: 3px 0px;
+}
+
+.about-us-img img {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  height: 587px;
+}
+
+.about-us-text {
+  width: 587px;
+  font-family: "Loved by the King";
+  font-size: 40px;
+  text-align: center;
 }
 
 .container-grid {
