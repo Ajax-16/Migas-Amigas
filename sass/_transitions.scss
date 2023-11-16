@@ -1,0 +1,30 @@
+@import 'variables.scss';
+
+.logo, .header-element{
+    transition: all 0.3s ease-in-out;
+
+    &:hover{
+        filter: drop-shadow(0px 3px 5px rgb(255 255 255 / 0.4));
+    }
+
+}
+
+.btn{
+
+    &:hover{
+        background-color: $btn-hover-background;
+        transition: background-color 0.15s ease-in-out;
+    }
+
+    &:active{
+        animation-name: btn-click;
+        animation-duration: 0.1s;
+    }
+
+}
+
+@keyframes btn-click {
+    0% {transform: scale(0.97);}
+    50% {transform: scale(0.95);}
+    100% {transform: scale(0.97);}
+}
