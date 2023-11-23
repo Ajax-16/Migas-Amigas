@@ -21,7 +21,7 @@ gulp.task("minifica_css", function () {
 gulp.task("git_push", function (done) {
   git()
     .add(".")
-    .commit("Subir cambios")
+    .commit("cambios realizados")
     .push("origin", "main", function (err) {
       if (err) {
         console.error(err);
