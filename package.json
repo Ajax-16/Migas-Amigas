@@ -27,6 +27,8 @@
     "gulp-clean-css": "^4.3.0",
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^5.1.0",
+    "gulp-ssh": "^0.7.0",
+    "sassdoc": "^2.7.4",
     "simple-git": "^3.21.0"
   },
   "dependencies": {

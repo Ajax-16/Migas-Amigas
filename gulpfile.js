@@ -1,8 +1,9 @@
-var gulp = require("gulp");
-var clean = require("gulp-clean");
-var sass = require("gulp-sass")(require("sass"));
-var git = require("simple-git");
-var cleanCSS = require("gulp-clean-css");
+const gulp = require("gulp");
+const clean = require("gulp-clean");
+const sass = require("gulp-sass")(require("sass"));
+const git = require("simple-git");
+const cleanCSS = require("gulp-clean-css");
+const sassdoc = require('sassdoc');
 
 gulp.task("borra", function () {
   return gulp
@@ -12,6 +13,11 @@ gulp.task("borra", function () {
 
 gulp.task("parse_sass", function () {
   return gulp.src("./sass/*.scss").pipe(sass()).pipe(gulp.dest("css"));
+});
+
+gulp.task('generate_docs', function () {
+    return gulp.src("./sass/*.scss")
+    .pipe(sassdoc());
 });
 
 gulp.task("minifica_css", function () {
@@ -34,5 +40,5 @@ gulp.task("git_push", function (done) {
 
 gulp.task(
   "default",
-  gulp.series("borra", "parse_sass", "minifica_css", "git_push")
+  gulp.series("borra", gulp.parallel("parse_sass", "generate_docs"), "minifica_css", "git_push")
 );
