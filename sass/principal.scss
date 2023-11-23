@@ -1,5 +1,27 @@
+/**
+ * Importación de Fuentes de Google
+ * 
+ * Se importan las fuentes 'Loved by the King' y 'Inter' desde Google Fonts.
+ * 
+ * - 'Loved by the King' se utiliza para un propósito específico.
+ * - 'Inter' se utiliza como fuente predeterminada para el texto en el proyecto.
+ * 
+ * @see {@link https://fonts.googleapis.com/css2?family=Loved+by+the+King&display=swap} Loved by the King Font
+ * @see {@link https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap} Inter Font
+ */
 @import url('https://fonts.googleapis.com/css2?family=Loved+by+the+King&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap');
 
+/**
+ * Importación de Archivos de Estilos y Diseño
+ * 
+ * Se importan los archivos '_variables.scss' y '_layout.scss'.
+ * 
+ * - '_variables.scss' contiene variables que pueden ser utilizadas en todo el proyecto.
+ * - '_layout.scss' contiene reglas de estilo relacionadas con el diseño y la disposición.
+ * 
+ * @see {@link _variables.scss}
+ * @see {@link _layout.scss}
+ */
 @import '_variables.scss';
 @import '_layout.scss';
