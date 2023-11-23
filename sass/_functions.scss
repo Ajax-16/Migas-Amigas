@@ -1,3 +1,11 @@
+/**
+ * @mixin h-flexing
+ * 
+ * Establece un contenedor con display:flex en dirección horizontal.
+ * 
+ * @param {String} $justify - Alineación horizontal (e.g., 'center', 'flex-start', 'flex-end').
+ * @param {String} $align - Alineación vertical (e.g., 'center', 'flex-start', 'flex-end').
+ */
 @mixin h-flexing($justify, $align){
     display: flex;
     flex-direction: row;
@@ -5,6 +13,14 @@
     align-items: $align;
 }
 
+/**
+ * @mixin v-flexing
+ * 
+ * Establece un contenedor con display:flex en dirección vertical.
+ * 
+ * @param {String} $justify - Alineación horizontal (e.g., 'center', 'flex-start', 'flex-end').
+ * @param {String} $align - Alineación vertical (e.g., 'center', 'flex-start', 'flex-end').
+ */
 @mixin v-flexing($justify, $align){
     display: flex;
     flex-direction: column;
@@ -12,10 +28,27 @@
     align-items: $align;
 }
 
+/**
+ * @mixin text-display
+ * 
+ * Establece el tamaño de fuente utilizando un mapa predefinido de tamaños de texto.
+ * 
+ * @param {String} $size - Tamaño de texto definido en el mapa $general-text-sizes.
+ */
 @mixin text-display($size){
     font-size: map-get($map: $general-text-sizes, $key: $size);
 }
 
+/**
+ * @mixin m-border-radius
+ * 
+ * Establece radios de borde para cada esquina de un elemento.
+ * 
+ * @param {String} $tl - Radio de borde para la esquina superior izquierda.
+ * @param {String} $tr - Radio de borde para la esquina superior derecha.
+ * @param {String} $bl - Radio de borde para la esquina inferior izquierda.
+ * @param {String} $br - Radio de borde para la esquina inferior derecha.
+ */
 @mixin m-border-radius($tl, $tr, $bl, $br){
     border-top-left-radius: $tl;
     border-top-right-radius: $tr;
@@ -23,10 +56,26 @@
     border-bottom-right-radius: $br;
 }
 
+/**
+ * @mixin textShadow
+ * 
+ * Agrega una sombra de texto con valores de desplazamiento y opacidad configurables.
+ * 
+ * @param {Number} $alpha - Opacidad de la sombra de texto.
+ */
 @mixin textShadow($alpha){
     text-shadow: 0 4px 4px rgba(0, 0, 0, $alpha);
 }
 
+/**
+ * @function addPx
+ * 
+ * Realiza la suma de dos valores y devuelve el resultado con la unidad 'px'.
+ * 
+ * @param {Number} $px - Valor inicial.
+ * @param {Number} $add - Valor a sumar.
+ * @return {String} - Resultado de la suma con la unidad 'px'.
+ */
 @function addPx($px, $add) {
     $resultado: ($px + $add);
     @return #{$resultado};
