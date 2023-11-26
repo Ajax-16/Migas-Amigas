@@ -40,5 +40,5 @@ gulp.task("git_push", function (done) {
 
 gulp.task(
   "default",
-  gulp.series("borra", "parse_sass", "generate_docs", "minifica_css", "git_push")
+  gulp.series("borra", gulp.parallel("parse_sass", "generate_docs"), "minifica_css", "git_push")
 );
