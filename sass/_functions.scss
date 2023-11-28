@@ -4,6 +4,8 @@
 /// @group mixins
 /// @parameter {string} $justify
 /// @parameter {string} $align
+/// 
+/// Crea un contenedor flex justificado y alineado dependiendo de los parámetros introducidos
 @mixin h-flexing($justify, $align){
     display: flex;
     flex-direction: row;
