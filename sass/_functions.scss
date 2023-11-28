@@ -1,11 +1,12 @@
 //// @access public
 /// @author Desarrollo aplicaciones web
 
+/// Crea un contenedor flex justificado y alineado dependiendo de los parámetros introducidos
 /// @group mixins
 /// @parameter {string} $justify
+/// Como debe alinearse en el eje X
 /// @parameter {string} $align
-/// 
-/// Crea un contenedor flex justificado y alineado dependiendo de los parámetros introducidos
+/// Cómo debe alinearse en el eje Y
 @mixin h-flexing($justify, $align){
     display: flex;
     flex-direction: row;
